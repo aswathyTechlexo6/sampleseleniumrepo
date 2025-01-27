@@ -12,20 +12,33 @@ public class AlertHandling extends BaseClass {
 		clickMeBtn.click();
 		//Alert inspect 
 		driver.switchTo().alert().accept();//to click OK Button inside alert
+		
+	}
+	public void javaScriptAlertTwo()
+	{
+		driver.navigate().to("https://selenium.qabible.in/javascript-alert.php");
 		WebElement clickMeBtn1=driver.findElement(By.xpath("//button[@class='btn btn-warning']"));
 		clickMeBtn1.click();
 		driver.switchTo().alert().dismiss();//to click on Cancel Button
+	
+	}
+	public void promptAlert()
+	{
+		driver.navigate().to("https://selenium.qabible.in/javascript-alert.php");
 		WebElement promptBox=driver.findElement(By.xpath("//button[@class='btn btn-danger']"));
 		promptBox.click();
 		driver.switchTo().alert().sendKeys("Aswathy");//to pass message
 		driver.switchTo().alert().accept();
 		//we can use IsDisplayed to check whether an alert is displayed
+		
 	}
 
 	public static void main(String[] args) {
 		AlertHandling alert=new AlertHandling();
 		alert.initializebrowser();
 		alert.javaScriptAlert();
+		alert.javaScriptAlertTwo();
+		alert.promptAlert();
 
 	}
 
